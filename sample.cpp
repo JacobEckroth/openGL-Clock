@@ -223,6 +223,8 @@ int frames;
 #define FPS 60
 float previousFrameTime;
 
+float distancePerMilli;
+
 // function prototypes:
 
 void	Animate( );
@@ -255,8 +257,10 @@ void	resetAllCubes();
 void	shuffleAllCubes();
 bool	moveAllCubes(float);
 void	updateEdgeCubes();
-float map(float, float, float, float, float);
+float	map(float, float, float, float, float);
 
+
+void	updateSeconds();
 
 void	forceAdvancementOfTime();
 
@@ -337,12 +341,18 @@ void
 Animate( )
 {
 	if (!manual) {
-		if (mainClock.updateTime()) {
+		bool secondsUpdated = false;
+		if (mainClock.updateTime(secondsUpdated)) {
 			updateClockLayout();
 			
 			clockRendered = false;
+			updateEdgeCubes();
 		}
-		updateEdgeCubes();
+		if (secondsUpdated) {
+			updateSeconds();
+		}
+		
+		
 	}
 	// put animation stuff in here -- change some global variables
 	// for Display( ) to find:
@@ -363,8 +373,13 @@ Animate( )
 	}
 	deltaTime = currentTime - previousAnimateTime;
 	
+
+	cubeInfo::greenDistance += deltaTime * distancePerMilli;
+
 	deltaTime /= 1000;	//because it's in milliseconds.
 	
+
+
 	previousAnimateTime = currentTime;
 
 	if (!clockRendered) {
@@ -1829,16 +1844,25 @@ void updateEdgeCubes() {
 			}
 		}
 	}
-	cubeInfo::furthestLeftX = farthestLeft - BOXSIZE/2;
-	cubeInfo::furthestRightX = farthestRight + BOXSIZE/2;
+	cubeInfo::furthestLeftX = farthestLeft;
+	cubeInfo::furthestRightX = farthestRight + BOXSIZE;
 
 	int seconds = mainClock.getSecond();
-	std::cout << "Green distance is:" << cubeInfo::greenDistance << std::endl;
+	
 	cubeInfo::greenDistance = map(seconds, 0, 60, cubeInfo::furthestLeftX, cubeInfo::furthestRightX);
 	
+	distancePerMilli = (cubeInfo::furthestRightX - cubeInfo::furthestLeftX) / 60.0 / 1000.0;
 
 }
 
 float map(float number, float originalLower, float originalHigher, float newLower, float newHigher) {
 	return ((number - originalLower) / (originalHigher - originalLower)) * (newHigher - newLower) + newLower;
+}
+
+
+void updateSeconds() {
+	int seconds = mainClock.getSecond();
+
+	cubeInfo::greenDistance = map(seconds, 0, 60, cubeInfo::furthestLeftX, cubeInfo::furthestRightX);
+
 }

@@ -1,6 +1,7 @@
 #include "clockInfo.h"
 #include <ctime>
 #include <iostream>
+#include <sys/utime.h>
 //All layouts passed into here will be pointers to 5 * 3 arrays.
 
 void clockInfo::getZeroLayout(bool**& layout) {
@@ -126,13 +127,17 @@ void clockInfo::clearLayout(bool**& layout) {
 	}
 }
 
-bool clockInfo::updateTime() {
+bool clockInfo::updateTime(bool & secondsUpdated) {
+
 	std::time_t t = std::time(0);   // get time now
 	std::tm* now = std::localtime(&t);
 	hour = now->tm_hour;
 	bool updatedTime = false;
 	if (now->tm_min != minute) {
 		updatedTime = true;
+	}
+	if (now->tm_sec != second) {
+		secondsUpdated = true;
 	}
 	minute = now->tm_min;
 	second = now->tm_sec;

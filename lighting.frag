@@ -18,7 +18,7 @@ main( )
 	vec3 objectColor = uColor;
 
 	if(inClock){
-		if (vGreenHighlight >= .5){
+		if (vGreenHighlight <= .5){
 			objectColor = vec3(0.,.7,0.);
 		}
 	}

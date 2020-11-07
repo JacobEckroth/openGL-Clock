@@ -17,6 +17,8 @@ cubeInfo::cubeInfo() {
 	z = 0;
 }
 
+ 
+
 void cubeInfo::drawCube(light testlight) {
 
 	Pattern->Use();
@@ -25,12 +27,19 @@ void cubeInfo::drawCube(light testlight) {
 		float diffuse = .4;
 		float specular = .3;
 		float shininess = 10.;
+		float percentage;
+		percentage = (greenDistance - x) / (cubeWidth);
+		if (percentage <= 0) {
+			percentage = 0; 
+		}
 		glm::vec3 objectColor(.5, .5, .5);
 		glm::vec3 uSpecularColor(testlight.getR(), testlight.getB(), testlight.getG());
 		glm::vec3 LIGHT1POSITION(testlight.getX(), testlight.getY(), testlight.getZ());
 		
-
+		Pattern->SetUniformVariable("leftX", x);
+		Pattern->SetUniformVariable("rightX", x + cubeWidth);
 		Pattern->SetUniformVariable("greenDistance", greenDistance);
+		Pattern->SetUniformVariable("percentage", percentage);
 		Pattern->SetUniformVariable("inClock",true);
 		Pattern->SetUniformVariable("LIGHT1POSITION", LIGHT1POSITION);
 		Pattern->SetUniformVariable("uKa", ambient);

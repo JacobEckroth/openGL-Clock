@@ -6,23 +6,35 @@ out vec3 vE; // vector from point to eye
 out float vGreenHighlight;
 uniform vec3 LIGHT1POSITION;
 uniform float greenDistance;
+uniform float percentage;
 uniform bool inClock;
 
-void main( ){
+uniform float leftX;
+uniform float rightX;
 
-	
+
+void main( ){
 
 	vST = gl_MultiTexCoord0.st;
 
 	vec4 ECposition = gl_ModelViewMatrix * gl_Vertex;
-	if(inClock){
-		if(ECposition.x <= greenDistance){
-			vGreenHighlight = 1.;
-		}else{
+	if(inClock){ 
+		
+		
+		if(greenDistance <= leftX){
+			vGreenHighlight = 100.;
+		}else if(greenDistance >= rightX){
+			vGreenHighlight = 0;
+		}else if(gl_Vertex.x <=0){
 			vGreenHighlight = 0.;
+		}else{
+			if(percentage <= .001){
+				vGreenHighlight = 1000;
+			}else{
+				vGreenHighlight = 0.5 / percentage;
+			}
 		}
-	}else{
-		vGreenHighlight = 0.;
+		
 	}
 	vN = normalize( gl_NormalMatrix * gl_Normal ); // normal vector
 	vL = LIGHT1POSITION - ECposition.xyz; // vector from the point

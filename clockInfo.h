@@ -16,7 +16,7 @@ public:
 	void getColonLayout(bool**&);
 	
 	void clearLayout(bool**&);
-	bool updateTime();
+	bool updateTime(bool&);
 	void printTime();
 
 	void forceUpdate();
