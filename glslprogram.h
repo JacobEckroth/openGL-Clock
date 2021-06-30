@@ -107,8 +107,8 @@ public:
 	void	SetUniformVariable(char*, float);
 	void	SetUniformVariable(char*, float, float, float);
 	void	SetUniformVariable(char*, float[3]);
-	void	SetUniformVariable(char*, glm::mat4&);
-	void	SetUniformVariable(char*, glm::vec3&);
+	void	SetUniformVariable(char*, glm::mat4 &);
+	void	SetUniformVariable(char*, glm::vec3 &);
 
 	void	SetVerbose(bool);
 	void	Use();

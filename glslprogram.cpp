@@ -31,7 +31,7 @@ struct GLbinarytype
 }
 BinaryTypes[] =
 {
-	{ (char*)".nvb",    NVIDIA_SHADER_BINARY },
+	{ (char *)".nvb",    NVIDIA_SHADER_BINARY },
 };
 
 extern GLchar* Gstap;		// set later
@@ -528,22 +528,6 @@ GLSLProgram::SetAttributeVariable(char* name, float vals[3])
 };
 
 
-#ifdef VEC3_H
-void
-GLSLProgram::SetAttributeVariable(char* name, Vec3& v);
-{
-	int loc;
-	if ((loc = GetAttributeLocation(name)) >= 0)
-	{
-		float vec[3];
-		v.GetVec3(vec);
-		this->Use();
-		glVertexAttrib3fv(loc, 3, vec);
-	}
-};
-#endif
-
-
 #ifdef VERTEX_BUFFER_OBJECT_H
 void
 GLSLProgram::SetAttributeVariable(char* name, VertexBufferObject& vb, GLenum which)
@@ -618,7 +602,7 @@ GLSLProgram::SetAttributeVariable(char* name, VertexBufferObject& vb, GLenum whi
 		GLSLProgram::SetUniformVariable(char* name, float val)
 	{
 		int loc;
-
+		
 		if ((loc = GetUniformLocation(name)) >= 0)
 		{
 			this->Use();
@@ -647,12 +631,12 @@ GLSLProgram::SetAttributeVariable(char* name, VertexBufferObject& vb, GLenum whi
 		if ((loc = GetUniformLocation(name)) >= 0)
 		{
 			this->Use();
-			glUniform3fv(loc, 3, vals);
+			glUniform3fv(loc, 1, vals);
 		}
 	};
 
 	void
-		GLSLProgram::SetUniformVariable(char* name, glm::mat4 & matrix)
+	GLSLProgram::SetUniformVariable(char* name, glm::mat4& matrix)
 	{
 		int loc;
 
@@ -666,7 +650,7 @@ GLSLProgram::SetAttributeVariable(char* name, VertexBufferObject& vb, GLenum whi
 	};
 
 	void
-		GLSLProgram::SetUniformVariable(char* name, glm::vec3 & vec)
+		GLSLProgram::SetUniformVariable(char* name, glm::vec3& vec)
 	{
 		int loc;
 
@@ -674,13 +658,13 @@ GLSLProgram::SetAttributeVariable(char* name, VertexBufferObject& vb, GLenum whi
 		{
 			this->Use();
 			//fprintf(stderr, "%s vec3\n", name);
-			glUniform3fv(loc, 1, value_ptr(vec));
+			glUniform3fv(loc, 1, value_ptr(vec) );
 		}
 	};
 
-
-
-
+	
+	
+	
 
 
 
@@ -845,7 +829,7 @@ GLSLProgram::SetAttributeVariable(char* name, VertexBufferObject& vb, GLenum whi
 	}
 
 
-	const char* tmp =
+	const char *tmp =
 	{
 	"#ifndef GSTAP_H\n\
 #define GSTAP_H\n\

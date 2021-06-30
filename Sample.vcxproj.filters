@@ -18,45 +18,41 @@
     <ClCompile Include="sample.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cubeInfo.cpp">
+    <ClCompile Include="clockInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="glslprogram.cpp">
+    <ClCompile Include="cubeInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="clockInfo.cpp">
+    <ClCompile Include="screenPosition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="screenPosition.cpp">
+    <ClCompile Include="glslprogram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cubeInfo.h">
+    <ClInclude Include="clockInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="glslprogram.h">
+    <ClInclude Include="cubeInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="clockInfo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="screenPosition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="glslprogram.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="lighting.vert">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="lighting.frag">
-      <Filter>Source Files</Filter>
-    </None>
+    <None Include="lighting.frag" />
+    <None Include="lighting.vert" />
   </ItemGroup>
 </Project>

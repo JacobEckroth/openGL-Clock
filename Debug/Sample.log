@@ -1,0 +1,36 @@
+﻿  clockInfo.cpp
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\clockInfo.cpp(133,22): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  cubeInfo.cpp
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\cubeInfo.cpp(27,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\cubeInfo.cpp(28,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\cubeInfo.cpp(58,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\cubeInfo.cpp(59,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\cubeInfo.cpp(60,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\cubeInfo.cpp(91,15): warning C4305: '*=': truncation from 'double' to 'float'
+  glslprogram.cpp
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\glslprogram.cpp(275,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\glslprogram.cpp(329,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\glslprogram.cpp(782,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\glslprogram.cpp(797,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  light.cpp
+  sample.cpp
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(295,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(363,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(369,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(972,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(977,38): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1605,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1620,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1620,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1620,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1633,32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1658,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1658,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1658,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1852,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1854,81): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\sample.cpp(1866,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  screenPosition.cpp
+  Generating Code...
+clockInfo.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+  Sample.vcxproj -> C:\Users\jacob\Desktop\BetterTest\SampleFreeGlut2019\Debug\Sample.exe
